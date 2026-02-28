@@ -1,0 +1,167 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { ArrowRight, Download, Github, Linkedin, Terminal } from "lucide-react";
+import { ScrambleText } from "./ui/scramble-text";
+
+export default function Hero() {
+  return (
+    <section
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#020617] pt-20"
+      id="home"
+    >
+      {/* Futuristic Grid Background */}
+      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[length:50px_50px]"></div>
+
+      {/* Sweeping Aurora/Light Beam Effects */}
+      <div className="absolute top-0 inset-x-0 h-[500px] bg-linear-to-b from-blue-500/20 via-transparent to-transparent opacity-50 blur-[100px] pointer-events-none"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vh] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none animate-pulse"></div>
+
+      {/* Floating Particles (CSS simulated via box-shadow in a real app, here we use absolute divs) */}
+      <div className="absolute top-1/4 left-1/4 w-1 h-1 bg-blue-400 rounded-full shadow-[0_0_10px_2px_#60a5fa] animate-ping"></div>
+      <div
+        className="absolute bottom-1/4 right-1/4 w-1 h-1 bg-purple-400 rounded-full shadow-[0_0_10px_2px_#c084fc] animate-ping"
+        style={{ animationDelay: "1s" }}
+      ></div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
+        {/* Futuristic Status Badge */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="inline-flex items-center gap-3 mb-8 px-5 py-2 rounded-full border border-blue-500/30 bg-blue-500/5 backdrop-blur-xl text-xs font-mono tracking-widest text-blue-300 uppercase shadow-[0_0_15px_rgba(59,130,246,0.1)]"
+        >
+          <Terminal size={14} className="text-blue-400" />
+          <span>System Online: Ready for Deployment</span>
+        </motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          className="text-6xl md:text-8xl font-black tracking-tighter mb-6 text-white uppercase"
+          style={{ textShadow: "0 0 40px rgba(255,255,255,0.1)" }}
+        >
+          <ScrambleText text="Architecting" duration={1500} delay={300} />{" "}
+          <br className="hidden md:block" />
+          <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-indigo-400 to-purple-400 drop-shadow-[0_0_20px_rgba(59,130,246,0.5)]">
+            <ScrambleText text="The Future." duration={2000} delay={800} />
+          </span>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+          className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-12 font-mono leading-relaxed"
+        >
+          {">"}{" "}
+          <ScrambleText
+            text="Next-generation full-stack development. Building scalable, high-performance web systems and intelligent user interfaces."
+            duration={2500}
+            delay={1200}
+          />
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-6"
+        >
+          {/* Futuristic primary button with Framer hover text effect */}
+          <motion.a
+            href="#projects"
+            initial="initial"
+            whileHover="hover"
+            className="group relative inline-flex h-14 items-center justify-center overflow-hidden rounded-md bg-blue-600 px-8 font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(37,99,235,0.6)] w-full sm:w-auto"
+          >
+            <div className="relative overflow-hidden h-6 flex items-center justify-center gap-2">
+              <motion.span
+                variants={{ initial: { y: 0 }, hover: { y: "-150%" } }}
+                transition={{ duration: 0.4, ease: [0.33, 1, 0.68, 1] }}
+                className="flex items-center gap-2"
+              >
+                INITIALIZE <ArrowRight size={18} />
+              </motion.span>
+              <motion.span
+                variants={{
+                  initial: { y: "150%", position: "absolute", left: 0 },
+                  hover: { y: 0, position: "absolute", left: 0 },
+                }}
+                transition={{ duration: 0.4, ease: [0.33, 1, 0.68, 1] }}
+                className="flex items-center gap-2 text-blue-200"
+              >
+                INITIALIZE <ArrowRight size={18} />
+              </motion.span>
+            </div>
+          </motion.a>
+
+          {/* Futuristic secondary button with Framer hover text effect */}
+          <motion.a
+            href="/Allyan_Resume.pdf"
+            download="Allyan_Resume.pdf"
+            initial="initial"
+            whileHover="hover"
+            className="group relative inline-flex h-14 items-center justify-center gap-2 overflow-hidden rounded-md border border-slate-700 bg-transparent px-8 font-mono font-medium text-slate-300 transition-all duration-300 hover:border-slate-500 hover:text-white hover:bg-white/5 shadow-[inset_0_0_20px_rgba(255,255,255,0.02)] w-full sm:w-auto"
+          >
+            <Download
+              size={18}
+              className="group-hover:-translate-y-1 transition-transform"
+            />
+
+            <div className="relative overflow-hidden h-6 flex items-center justify-center">
+              <motion.span
+                variants={{ initial: { y: 0 }, hover: { y: "-150%" } }}
+                transition={{ duration: 0.4, ease: [0.33, 1, 0.68, 1] }}
+                className="block"
+              >
+                EXTRACT_MEM.PDF
+              </motion.span>
+              <motion.span
+                variants={{
+                  initial: { y: "150%", position: "absolute", left: 0 },
+                  hover: { y: 0, position: "absolute", left: 0 },
+                }}
+                transition={{ duration: 0.4, ease: [0.33, 1, 0.68, 1] }}
+                className="block text-slate-100"
+              >
+                EXTRACT_MEM.PDF
+              </motion.span>
+            </div>
+          </motion.a>
+        </motion.div>
+
+        {/* Socials - clean futuristic layout */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 0.8 }}
+          className="mt-16 flex items-center justify-center gap-8"
+        >
+          {[
+            { Icon: Github, href: "https://github.com/aliyansajid" },
+            {
+              Icon: Linkedin,
+              href: "https://www.linkedin.com/in/allyan-sajid/",
+            },
+          ].map(({ Icon, href }, i) => (
+            <a
+              key={i}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-500 hover:text-blue-400 hover:shadow-[0_0_15px_rgba(59,130,246,0.5)] transition-all duration-300 p-3 rounded-full border border-transparent hover:border-blue-500/30 bg-slate-900/50"
+            >
+              <Icon size={20} />
+            </a>
+          ))}
+        </motion.div>
+      </div>
+
+      {/* Bottom fade out to dark */}
+      <div className="absolute bottom-0 inset-x-0 h-32 bg-linear-to-t from-[#020617] to-transparent pointer-events-none"></div>
+    </section>
+  );
+}
