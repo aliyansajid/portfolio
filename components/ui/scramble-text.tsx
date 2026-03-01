@@ -51,7 +51,7 @@ export function ScrambleText({
           setDisplayText(text);
         }
 
-        iteration += 1 / 3; // Controls how fast it resolves per tick
+        iteration += 1; // Resolve 1 character per tick to exactly match total duration
       }, intervalDuration);
     };
 

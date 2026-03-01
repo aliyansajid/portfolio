@@ -11,7 +11,7 @@ import { Terminal } from "lucide-react";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#020617] text-slate-50 selection:bg-blue-500/30 font-sans overflow-hidden">
+    <main className="min-h-screen bg-[#020617] text-slate-50 selection:bg-blue-500/30 font-sans overflow-x-clip">
       <Navbar />
       <Hero />
       <About />

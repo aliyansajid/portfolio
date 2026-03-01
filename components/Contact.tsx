@@ -30,7 +30,7 @@ export default function Contact() {
             style={{ textShadow: "0 0 20px rgba(255,255,255,0.1)" }}
           >
             <ScrambleText text="Get In" duration={1000} delay={200} />{" "}
-            <span className="text-blue-500">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-cyan-400">
               <ScrambleText text="Touch." duration={1400} delay={600} />
             </span>
           </h2>
@@ -47,14 +47,25 @@ export default function Contact() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="relative bg-[#060c21] p-6 border border-slate-800 flex items-start gap-4 hover:border-blue-500/50 transition-colors group cursor-default"
+              className="relative bg-[#060c21] p-6 border border-slate-800 flex items-start gap-4 transition-all duration-300 group cursor-default overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.5)]"
             >
-              <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              {/* Blue accent line */}
+              <div className="absolute top-0 left-0 w-2 h-full bg-blue-600/20 group-hover:bg-blue-500 transition-colors duration-300"></div>
 
-              <div className="w-12 h-12 bg-slate-900 border border-slate-700 flex items-center justify-center shrink-0 shadow-[0_0_10px_rgba(59,130,246,0.1)] group-hover:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-shadow">
+              {/* Corner Accents */}
+              <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-slate-600 opacity-30 z-20 pointer-events-none group-hover:border-blue-500 group-hover:border-t-2 group-hover:border-r-2 group-hover:opacity-100 transition-all duration-300"></div>
+              <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-slate-600 opacity-30 z-20 pointer-events-none group-hover:border-blue-500 group-hover:border-b-2 group-hover:border-l-2 group-hover:opacity-100 transition-all duration-300"></div>
+
+              {/* Subtle gradient background on hover */}
+              <div className="absolute inset-0 bg-linear-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+              {/* Scanline effect */}
+              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.1)_50%)] bg-size-[100%_4px] pointer-events-none opacity-30"></div>
+
+              <div className="w-12 h-12 bg-slate-900 border border-slate-700 flex items-center justify-center shrink-0 shadow-[0_0_10px_rgba(59,130,246,0.2)] relative z-10">
                 <Mail className="text-blue-500" size={20} />
               </div>
-              <div>
+              <div className="relative z-10">
                 <h3 className="text-sm font-mono font-bold text-white mb-1 uppercase tracking-widest">
                   Email_Address
                 </h3>
@@ -72,20 +83,31 @@ export default function Contact() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="relative bg-[#060c21] p-6 border border-slate-800 flex items-start gap-4 hover:border-pink-500/50 transition-colors group cursor-default"
+              className="relative bg-[#060c21] p-6 border border-slate-800 flex items-start gap-4 transition-all duration-300 group cursor-default overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.5)]"
             >
-              <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-pink-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              {/* Purple accent line */}
+              <div className="absolute top-0 left-0 w-2 h-full bg-purple-600/20 group-hover:bg-purple-500 transition-colors duration-300"></div>
 
-              <div className="w-12 h-12 bg-slate-900 border border-slate-700 flex items-center justify-center shrink-0 shadow-[0_0_10px_rgba(236,72,153,0.1)] group-hover:shadow-[0_0_15px_rgba(236,72,153,0.3)] transition-shadow">
-                <Phone className="text-pink-500" size={20} />
+              {/* Corner Accents */}
+              <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-slate-600 opacity-30 z-20 pointer-events-none group-hover:border-purple-500 group-hover:border-t-2 group-hover:border-r-2 group-hover:opacity-100 transition-all duration-300"></div>
+              <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-slate-600 opacity-30 z-20 pointer-events-none group-hover:border-purple-500 group-hover:border-b-2 group-hover:border-l-2 group-hover:opacity-100 transition-all duration-300"></div>
+
+              {/* Subtle gradient background on hover */}
+              <div className="absolute inset-0 bg-linear-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+              {/* Scanline effect */}
+              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.1)_50%)] bg-size-[100%_4px] pointer-events-none opacity-30"></div>
+
+              <div className="w-12 h-12 bg-slate-900 border border-slate-700 flex items-center justify-center shrink-0 shadow-[0_0_10px_rgba(168,85,247,0.2)] relative z-10">
+                <Phone className="text-purple-400" size={20} />
               </div>
-              <div>
+              <div className="relative z-10">
                 <h3 className="text-sm font-mono font-bold text-white mb-1 uppercase tracking-widest">
                   Comm_Link
                 </h3>
                 <a
                   href="tel:+923369815769"
-                  className="text-slate-400 text-sm font-mono hover:text-pink-400 transition-colors"
+                  className="text-slate-400 text-sm font-mono hover:text-purple-400 transition-colors"
                 >
                   +92 336 9815769
                 </a>
@@ -101,10 +123,6 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="w-full lg:w-2/3 bg-[#060c21] p-8 md:p-10 border border-slate-800 relative group overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.5)]"
           >
-            {/* Corner Accents */}
-            <div className="absolute top-0 right-0 w-6 h-6 border-t-2 border-r-2 border-slate-600 opacity-50 z-20 pointer-events-none group-hover:border-blue-500 transition-colors duration-500"></div>
-            <div className="absolute bottom-0 left-0 w-6 h-6 border-b-2 border-l-2 border-slate-600 opacity-50 z-20 pointer-events-none group-hover:border-blue-500 transition-colors duration-500"></div>
-
             {/* Scanline Overlay */}
             <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.1)_50%)] bg-size-[100%_4px] pointer-events-none z-10 opacity-30"></div>
 
@@ -181,18 +199,10 @@ export default function Contact() {
               <div className="flex justify-end pt-4">
                 <button
                   type="submit"
-                  className="group/btn relative flex items-center justify-center gap-3 w-full md:w-auto px-8 py-4 bg-transparent border border-blue-500 text-blue-400 font-mono text-sm tracking-widest uppercase hover:bg-blue-600/10 hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] transition-all overflow-hidden"
+                  className="flex items-center justify-center gap-2 w-full md:w-auto px-8 py-4 bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 border border-blue-500/30 hover:border-blue-500 text-xs font-mono tracking-widest uppercase transition-all shadow-[0_0_15px_rgba(59,130,246,0.1)] hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
                 >
-                  <span className="relative z-10 flex items-center gap-2">
-                    TRANSMIT_DATA()
-                    <Send
-                      size={16}
-                      className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform"
-                    />
-                  </span>
-
-                  {/* Button Glitch Hover Effect Overlay */}
-                  <div className="absolute inset-0 bg-blue-500/20 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-300 ease-out z-0"></div>
+                  TRANSMIT_DATA()
+                  <Send size={16} />
                 </button>
               </div>
             </form>

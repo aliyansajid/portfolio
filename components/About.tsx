@@ -4,21 +4,25 @@ import { motion } from "framer-motion";
 import { Coffee, Code, Globe2, Sparkles, Terminal } from "lucide-react";
 import { ScrambleText } from "./ui/scramble-text";
 
+import Image from "next/image";
+
 export default function About() {
   const stats = [
     {
-      value: "4+",
+      value: "2+",
       label: "Years Experience",
       icon: Coffee,
       color: "text-blue-400",
       bg: "bg-blue-500/10",
+      border: "group-hover:border-blue-400",
     },
     {
-      value: "10+",
+      value: "35+",
       label: "Projects Completed",
       icon: Code,
       color: "text-purple-400",
       bg: "bg-purple-500/10",
+      border: "group-hover:border-purple-400",
     },
     {
       value: "5+",
@@ -26,20 +30,22 @@ export default function About() {
       icon: Globe2,
       color: "text-emerald-400",
       bg: "bg-emerald-500/10",
+      border: "group-hover:border-emerald-400",
     },
     {
-      value: "100%",
-      label: "Client Satisfaction",
+      value: "4.8",
+      label: "Star Rating",
       icon: Sparkles,
       color: "text-amber-400",
       bg: "bg-amber-500/10",
+      border: "group-hover:border-amber-400",
     },
   ];
 
   return (
     <section className="py-24 relative bg-[#020617]" id="about">
       {/* Background Dot Grid */}
-      <div className="absolute inset-0 bg-dot-white/[0.05] bg-[length:20px_20px]"></div>
+      <div className="absolute inset-0 bg-dot-white/[0.05] bg-size-[20px_20px]"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <motion.div
@@ -57,7 +63,7 @@ export default function About() {
             style={{ textShadow: "0 0 20px rgba(255,255,255,0.1)" }}
           >
             <ScrambleText text="Discover" duration={1000} delay={200} />{" "}
-            <span className="text-blue-500">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-cyan-400">
               <ScrambleText text="Me." duration={1500} delay={600} />
             </span>
           </h2>
@@ -73,17 +79,46 @@ export default function About() {
             className="w-full lg:w-5/12 relative flex justify-center"
           >
             {/* Cyberpunk profile card */}
-            <div className="relative w-full max-w-sm aspect-4/5 bg-[#060c21] border border-slate-700/50 flex flex-col items-center justify-center p-8 group transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+            <div className="relative w-full max-w-sm aspect-4/5 bg-[#060c21] border border-slate-800 flex flex-col items-center justify-center p-8 group transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
               {/* Cyberpunk accent lines */}
-              <div className="absolute top-0 right-0 w-2 h-1/2 bg-blue-600/20 group-hover:bg-blue-500 transition-colors duration-300"></div>
-              <div className="absolute -top-[1px] -right-[1px] w-4 h-4 border-t-2 border-r-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="absolute -bottom-[1px] -left-[1px] w-4 h-4 border-b-2 border-l-2 border-blue-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="absolute top-0 left-0 w-2 h-1/2 bg-blue-600/20 group-hover:bg-blue-500 transition-colors duration-300"></div>
 
-              <div className="w-32 h-32 border-2 border-dashed border-slate-700 bg-slate-900/50 flex items-center justify-center mb-6 relative z-10 group-hover:border-blue-500/50 transition-colors duration-300">
-                {/* Placeholder for User Profile Image */}
-                <span className="text-4xl text-slate-700 font-black font-mono tracking-tighter group-hover:text-blue-500/50 transition-colors">
-                  AS
-                </span>
+              {/* Corner Accents */}
+              <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-slate-600 opacity-30 z-20 pointer-events-none group-hover:border-blue-500 group-hover:border-t-2 group-hover:border-r-2 group-hover:opacity-100 transition-all duration-300"></div>
+              <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-slate-600 opacity-30 z-20 pointer-events-none group-hover:border-blue-500 group-hover:border-b-2 group-hover:border-l-2 group-hover:opacity-100 transition-all duration-300"></div>
+
+              {/* Subtle gradient background on hover */}
+              <div className="absolute inset-0 bg-linear-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+              {/* Futuristic Cyberpunk Image Container */}
+              <div
+                className="w-40 h-44 relative z-10 mb-6 overflow-hidden"
+                style={{
+                  clipPath:
+                    "polygon(20% 0%, 100% 0, 100% 80%, 80% 100%, 0 100%, 0% 20%)",
+                }}
+              >
+                {/* Image Wrapper inside the clipped area */}
+                <div className="absolute inset-0 transition-colors duration-500">
+                  <div
+                    className="w-full h-full relative overflow-hidden bg-transparent"
+                    style={{
+                      clipPath:
+                        "polygon(20% 0%, 100% 0, 100% 80%, 80% 100%, 0 100%, 0% 20%)",
+                    }}
+                  >
+                    {/* User Profile Image */}
+                    <Image
+                      src="/Picture.png"
+                      alt="Allyan Sajid Profile"
+                      width={160}
+                      height={176}
+                      className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700 opacity-70 group-hover:opacity-100 group-hover:scale-105"
+                    />
+                    {/* Cyberpunk Overlay Scanline */}
+                    <div className="absolute inset-0 bg-blue-500/10 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500"></div>
+                  </div>
+                </div>
               </div>
 
               <div className="text-center relative z-10 w-full">
@@ -105,7 +140,7 @@ export default function About() {
               </div>
 
               {/* Scanline effect */}
-              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.1)_50%)] bg-[length:100%_4px] pointer-events-none opacity-20 group-hover:opacity-40 transition-opacity"></div>
+              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.1)_50%)] bg-size-[100%_4px] pointer-events-none opacity-30"></div>
             </div>
           </motion.div>
 
@@ -127,7 +162,7 @@ export default function About() {
               </span>
             </h3>
 
-            <div className="space-y-6 text-slate-400 text-lg leading-relaxed mb-10 font-mono text-sm md:text-base">
+            <div className="space-y-6 text-slate-400 leading-relaxed mb-10 font-mono text-sm md:text-base">
               <p>
                 {">"} Hello! I'm Allyan Sajid, a passionate full-stack developer
                 who loves building digital solutions that make an impact. My
@@ -149,9 +184,20 @@ export default function About() {
               {stats.map((stat, idx) => (
                 <div
                   key={idx}
-                  className="bg-[#060c21] p-6 border border-slate-800 flex flex-col md:flex-row items-start md:items-center gap-4 hover:border-blue-500/50 transition-colors group relative overflow-hidden"
+                  className="bg-[#060c21] border border-slate-800 p-6 flex flex-col md:flex-row items-start md:items-center gap-4 transition-colors group relative overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.5)]"
                 >
                   <div className="absolute inset-0 bg-linear-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+
+                  {/* Scanline effect */}
+                  <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.1)_50%)] bg-size-[100%_4px] pointer-events-none opacity-30"></div>
+
+                  {/* Corner Accents */}
+                  <div
+                    className={`absolute top-0 right-0 w-4 h-4 border-t border-r border-slate-600 opacity-30 z-20 pointer-events-none group-hover:opacity-100 group-hover:border-t-2 group-hover:border-r-2 transition-all duration-300 ${stat.border}`}
+                  ></div>
+                  <div
+                    className={`absolute bottom-0 left-0 w-4 h-4 border-b border-l border-slate-600 opacity-30 z-20 pointer-events-none group-hover:opacity-100 group-hover:border-b-2 group-hover:border-l-2 transition-all duration-300 ${stat.border}`}
+                  ></div>
 
                   <div
                     className={`w-10 h-10 ${stat.bg} border border-slate-800 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform`}

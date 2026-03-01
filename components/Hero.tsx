@@ -11,7 +11,7 @@ export default function Hero() {
       id="home"
     >
       {/* Futuristic Grid Background */}
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[length:50px_50px]"></div>
+      <div className="absolute inset-0 bg-grid-white/[0.02] bg-size-[50px_50px]"></div>
 
       {/* Sweeping Aurora/Light Beam Effects */}
       <div className="absolute top-0 inset-x-0 h-[500px] bg-linear-to-b from-blue-500/20 via-transparent to-transparent opacity-50 blur-[100px] pointer-events-none"></div>
@@ -70,67 +70,30 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           className="flex flex-col sm:flex-row items-center justify-center gap-6"
         >
-          {/* Futuristic primary button with Framer hover text effect */}
-          <motion.a
+          {/* Futuristic primary button (blue terminal style from Navbar) */}
+          <a
             href="#projects"
-            initial="initial"
-            whileHover="hover"
-            className="group relative inline-flex h-14 items-center justify-center overflow-hidden rounded-md bg-blue-600 px-8 font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-[0_0_40px_rgba(37,99,235,0.6)] w-full sm:w-auto"
+            className="flex items-center justify-center min-w-[200px] gap-4 px-6 py-4 bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 border border-blue-500/30 hover:border-blue-500 text-xs font-mono tracking-widest uppercase transition-all shadow-[0_0_15px_rgba(59,130,246,0.1)] hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] group/link"
           >
-            <div className="relative overflow-hidden h-6 flex items-center justify-center gap-2">
-              <motion.span
-                variants={{ initial: { y: 0 }, hover: { y: "-150%" } }}
-                transition={{ duration: 0.4, ease: [0.33, 1, 0.68, 1] }}
-                className="flex items-center gap-2"
-              >
-                INITIALIZE <ArrowRight size={18} />
-              </motion.span>
-              <motion.span
-                variants={{
-                  initial: { y: "150%", position: "absolute", left: 0 },
-                  hover: { y: 0, position: "absolute", left: 0 },
-                }}
-                transition={{ duration: 0.4, ease: [0.33, 1, 0.68, 1] }}
-                className="flex items-center gap-2 text-blue-200"
-              >
-                INITIALIZE <ArrowRight size={18} />
-              </motion.span>
-            </div>
-          </motion.a>
+            INITIALIZE{" "}
+            <ArrowRight
+              size={18}
+              className="group-hover/link:translate-x-1 transition-transform"
+            />
+          </a>
 
-          {/* Futuristic secondary button with Framer hover text effect */}
-          <motion.a
+          {/* Futuristic secondary button (outline standard style) */}
+          <a
             href="/Allyan_Resume.pdf"
             download="Allyan_Resume.pdf"
-            initial="initial"
-            whileHover="hover"
-            className="group relative inline-flex h-14 items-center justify-center gap-2 overflow-hidden rounded-md border border-slate-700 bg-transparent px-8 font-mono font-medium text-slate-300 transition-all duration-300 hover:border-slate-500 hover:text-white hover:bg-white/5 shadow-[inset_0_0_20px_rgba(255,255,255,0.02)] w-full sm:w-auto"
+            className="flex items-center gap-3 text-sm font-mono tracking-widest uppercase text-slate-300 hover:text-white transition-colors bg-slate-800/80 px-6 py-4 border border-slate-700 hover:border-slate-400 group/btn"
           >
             <Download
               size={18}
-              className="group-hover:-translate-y-1 transition-transform"
+              className="group-hover/btn:-translate-y-1 transition-transform"
             />
-
-            <div className="relative overflow-hidden h-6 flex items-center justify-center">
-              <motion.span
-                variants={{ initial: { y: 0 }, hover: { y: "-150%" } }}
-                transition={{ duration: 0.4, ease: [0.33, 1, 0.68, 1] }}
-                className="block"
-              >
-                EXTRACT_MEM.PDF
-              </motion.span>
-              <motion.span
-                variants={{
-                  initial: { y: "150%", position: "absolute", left: 0 },
-                  hover: { y: 0, position: "absolute", left: 0 },
-                }}
-                transition={{ duration: 0.4, ease: [0.33, 1, 0.68, 1] }}
-                className="block text-slate-100"
-              >
-                EXTRACT_MEM.PDF
-              </motion.span>
-            </div>
-          </motion.a>
+            EXTRACT_MEM.PDF
+          </a>
         </motion.div>
 
         {/* Socials - clean futuristic layout */}

@@ -1,7 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Terminal, Cpu, MapPin, CalendarDays, ArrowRight } from "lucide-react";
+import {
+  Terminal,
+  GraduationCap,
+  MapPin,
+  CalendarDays,
+  ArrowRight,
+} from "lucide-react";
 import { ScrambleText } from "./ui/scramble-text";
 
 export default function Education() {
@@ -24,7 +30,7 @@ export default function Education() {
       id="education"
     >
       {/* Background Grid */}
-      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[length:50px_50px]"></div>
+      <div className="absolute inset-0 bg-grid-white/[0.02] bg-size-[50px_50px]"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row gap-16">
@@ -36,7 +42,7 @@ export default function Education() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-flex items-center gap-2 mb-6 px-3 py-1 bg-slate-900 border border-slate-700 text-xs font-mono text-slate-400">
+              <div className="inline-flex justify-center items-center gap-2 mb-6 px-3 py-1 bg-slate-900 border border-slate-700 text-xs font-mono text-slate-400">
                 <Terminal size={12} className="text-blue-500" />{" "}
                 SYSTEM.LOG.EDUCATION
               </div>
@@ -59,18 +65,11 @@ export default function Education() {
                 {">"} Trace logs of academic records and core computational
                 theory training.
               </p>
-
-              <div className="hidden lg:flex items-center gap-4 text-slate-500">
-                <ArrowRight size={20} className="text-emerald-500" />
-                <span className="text-xs font-mono uppercase tracking-widest text-emerald-400/50">
-                  Awaiting Input / Scroll down
-                </span>
-              </div>
             </motion.div>
           </div>
 
           {/* Right Column (Scrollable Cards) */}
-          <div className="w-full lg:w-2/3 space-y-12">
+          <div className="w-full lg:w-2/3 flex flex-col gap-24 relative pb-[10vh]">
             {education.map((exp, index) => (
               <motion.div
                 key={index}
@@ -78,21 +77,28 @@ export default function Education() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative bg-[#060c21] p-8 md:p-10 border border-slate-800 hover:border-emerald-500/50 transition-all duration-300"
+                style={{
+                  top: `calc(15vh + ${index * 40}px)`,
+                }}
+                className="sticky z-10 group bg-[#060c21] border border-slate-800 p-8 md:p-10 transition-all duration-300 shadow-[0_0_30px_rgba(0,0,0,0.5)]"
               >
                 {/* Cyberpunk accent lines */}
                 <div className="absolute top-0 left-0 w-2 h-full bg-emerald-600/20 group-hover:bg-emerald-500 transition-colors duration-300"></div>
-                <div className="absolute -top-[1px] -left-[1px] w-4 h-4 border-t-2 border-l-2 border-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="absolute -bottom-[1px] -right-[1px] w-4 h-4 border-b-2 border-r-2 border-emerald-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                {/* Corner Accents */}
+                <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-slate-600 opacity-30 z-20 pointer-events-none group-hover:border-emerald-500 group-hover:border-t-2 group-hover:border-r-2 group-hover:opacity-100 transition-all duration-300"></div>
+                <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-slate-600 opacity-30 z-20 pointer-events-none group-hover:border-emerald-500 group-hover:border-b-2 group-hover:border-l-2 group-hover:opacity-100 transition-all duration-300"></div>
 
                 {/* Subtle gradient background on hover */}
                 <div className="absolute inset-0 bg-linear-to-br from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+                {/* Scanline effect */}
+                <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.1)_50%)] bg-size-[100%_4px] pointer-events-none opacity-30"></div>
 
                 <div className="relative z-10 flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8 pl-4">
                   <div className="space-y-3">
                     <div className="flex items-center gap-3">
                       <span className="p-2 bg-slate-900 border border-slate-700 text-emerald-400 shadow-[0_0_10px_rgba(16,185,129,0.2)]">
-                        <Cpu size={20} />
+                        <GraduationCap size={20} />
                       </span>
                       <h3 className="text-2xl font-bold text-slate-100 tracking-tight uppercase">
                         {exp.title}

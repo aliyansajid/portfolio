@@ -7,9 +7,18 @@ import { ScrambleText } from "./ui/scramble-text";
 export default function Projects() {
   const projects = [
     {
+      title: "The Educators",
+      desc: "A comprehensive Learning Management System (LMS) designed for educational institutions to manage courses, students, and administration.",
+      tags: ["Next.js", "React", "Turborepo", "Zod"],
+      github: "https://github.com/aliyansajid/the-educators",
+      demo: "https://the-educators-client.vercel.app/",
+      color: "from-violet-600/30 to-violet-900/10",
+      accent: "border-violet-500",
+    },
+    {
       title: "RotorSync",
       desc: "Real-time fleet management system that handles 3,000+ pins, 5,000+ fields, and approximately 2,400 messages per minute across 40 devices.",
-      tags: ["Next.js", "Swift iOS", "PostgreSQL", "MQTT", "Docker"],
+      tags: ["Next.js", "Swift", "PostgreSQL", "MQTT"],
       github: "#",
       demo: "#",
       color: "from-blue-600/30 to-blue-900/10",
@@ -18,7 +27,7 @@ export default function Projects() {
     {
       title: "AutoVendo",
       desc: "Full stack car listing platform specifically tailored for the European market. Implements dynamic forms and high-performance search capabilities.",
-      tags: ["React", "TypeScript", "Tailwind CSS", "Node.js"],
+      tags: ["Next.js", "Golang", "AWS", "PostgreSQL"],
       github: "https://github.com/aliyansajid/autovendo",
       demo: "https://www.autovendo.ch/",
       color: "from-cyan-600/30 to-cyan-900/10",
@@ -27,11 +36,38 @@ export default function Projects() {
     {
       title: "AIForge",
       desc: "Final year project that streamlines machine learning deployment, allowing users to deploy machine learning models as APIs on GCP with a single click.",
-      tags: ["Python", "GCP", "Machine Learning", "Microservices"],
+      tags: ["Next.js", "Python", "GCP", "Microservices"],
       github: "https://github.com/aliyansajid/aiforge",
       demo: "https://youtu.be/KJBq07PWnJ8",
       color: "from-emerald-600/30 to-emerald-900/10",
       accent: "border-emerald-500",
+    },
+    {
+      title: "Real Estate App",
+      desc: "Semester project property listing platform where users can place properties (houses, farms, penthouses, upper/lower) for rent, buy, or lease.",
+      tags: ["Laravel", "SQL", "HTML", "CSS"],
+      github: "https://github.com/aliyansajid/real-estate-app",
+      demo: "#",
+      color: "from-rose-600/30 to-rose-900/10",
+      accent: "border-rose-500",
+    },
+    {
+      title: "Munch Vending",
+      desc: "A complete website for a premier San Francisco Bay Area vending provider, showcasing traditional, micro-market, and touchless vending solutions.",
+      tags: ["HTML", "CSS", "JavaScript", "WordPress"],
+      github: "#",
+      demo: "https://munchvending.com/",
+      color: "from-amber-600/30 to-amber-900/10",
+      accent: "border-amber-500",
+    },
+    {
+      title: "Sydney Hydraulic",
+      desc: "A business portal for a family-owned Sydney hydraulic centre with 40+ years experience, offering top-class repair and re-manufacturing services.",
+      tags: ["HTML", "CSS", "JavaScript", "WordPress"],
+      github: "https://github.com/aliyansajid/sydney-hydraulic",
+      demo: "https://sydneyhydraulic.com.au/",
+      color: "from-orange-600/30 to-orange-900/10",
+      accent: "border-orange-500",
     },
   ];
 
@@ -59,7 +95,7 @@ export default function Projects() {
             style={{ textShadow: "0 0 20px rgba(255,255,255,0.1)" }}
           >
             <ScrambleText text="Selected" duration={1000} delay={400} />{" "}
-            <span className="text-blue-500">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-cyan-400">
               <ScrambleText text="Works." duration={1400} delay={600} />
             </span>
           </h2>
@@ -80,19 +116,23 @@ export default function Projects() {
               style={{
                 top: `calc(15vh + ${index * 40}px)`,
               }}
-              className="sticky z-10 w-full max-w-5xl mx-auto group bg-[#060c21] h-[500px] flex flex-col justify-end border border-slate-800 hover:border-slate-600 transition-colors duration-500 shadow-[0_0_50px_rgba(0,0,0,0.8)] overflow-hidden"
+              className="sticky z-10 w-full max-w-5xl mx-auto group bg-[#060c21] border border-slate-800 h-[500px] flex flex-col justify-end transition-colors duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden"
             >
               {/* Corner Accents */}
-              <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-slate-500 opacity-50 z-20 pointer-events-none group-hover:border-blue-400 transition-colors"></div>
-              <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-slate-500 opacity-50 z-20 pointer-events-none group-hover:border-blue-400 transition-colors"></div>
+              <div
+                className={`absolute top-0 right-0 w-4 h-4 border-t border-r border-slate-600 opacity-30 z-20 pointer-events-none group-hover:opacity-100 group-hover:border-t-2 group-hover:border-r-2 transition-all duration-300 group-hover:${project.accent}`}
+              ></div>
+              <div
+                className={`absolute bottom-0 left-0 w-4 h-4 border-b border-l border-slate-600 opacity-30 z-20 pointer-events-none group-hover:opacity-100 group-hover:border-b-2 group-hover:border-l-2 transition-all duration-300 group-hover:${project.accent}`}
+              ></div>
 
               {/* Background gradient map placeholder */}
               <div
                 className={`absolute inset-0 bg-linear-to-br ${project.color} opacity-20 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none`}
               ></div>
 
-              {/* Holographic Scanline Overlay */}
-              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.1)_50%)] bg-size-[100%_4px] pointer-events-none z-10"></div>
+              {/* Scanline effect */}
+              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.1)_50%)] bg-size-[100%_4px] pointer-events-none opacity-30"></div>
 
               {/* Dynamic glowing border effect at the top */}
               <div
@@ -122,7 +162,7 @@ export default function Projects() {
                     {project.desc}
                   </p>
 
-                  <div className="flex items-center gap-6 md:opacity-50 group-hover:opacity-100 transition-opacity duration-500 delay-200">
+                  <div className="flex flex-col sm:flex-row items-center gap-6 md:opacity-50 group-hover:opacity-100 transition-opacity duration-500 delay-200">
                     <a
                       href={project.github}
                       target={project.github !== "#" ? "_blank" : undefined}
@@ -131,7 +171,7 @@ export default function Projects() {
                           ? "noopener noreferrer"
                           : undefined
                       }
-                      className="flex items-center gap-2 text-sm font-mono tracking-widest uppercase text-slate-300 hover:text-blue-400 transition-colors bg-slate-800/50 px-4 py-2 border border-slate-700 hover:border-blue-500/50"
+                      className="flex items-center gap-2 px-6 py-2 bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 border border-blue-500/30 hover:border-blue-500 text-xs font-mono tracking-widest uppercase transition-all shadow-[0_0_15px_rgba(59,130,246,0.1)] hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
                     >
                       <Github size={16} /> REPOSITORY //
                     </a>
@@ -141,7 +181,7 @@ export default function Projects() {
                       rel={
                         project.demo !== "#" ? "noopener noreferrer" : undefined
                       }
-                      className="flex items-center gap-2 text-sm font-mono tracking-widest uppercase text-slate-300 hover:text-blue-400 transition-colors bg-slate-800/50 px-4 py-2 border border-slate-700 hover:border-blue-500/50"
+                      className="flex items-center gap-2 px-6 py-2 bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 border border-blue-500/30 hover:border-blue-500 text-xs font-mono tracking-widest uppercase transition-all shadow-[0_0_15px_rgba(59,130,246,0.1)] hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
                     >
                       <ExternalLink size={16} /> INITIALIZE //
                     </a>

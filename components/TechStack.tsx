@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import {
   Server,
   TabletSmartphone,
+  Smartphone,
   Database,
   Cloud,
   Wrench,
@@ -36,9 +37,17 @@ export default function TechStack() {
       border: "group-hover:border-purple-500",
     },
     {
+      title: "Mobile",
+      icon: Smartphone,
+      skills: ["Flutter", "React Native", "Swift"],
+      color: "text-indigo-400",
+      bg: "bg-[#060c21]",
+      border: "group-hover:border-indigo-500",
+    },
+    {
       title: "Database",
       icon: Database,
-      skills: ["MongoDB", "PostgreSQL"],
+      skills: ["MongoDB", "PostgreSQL", "Supabase", "Flutter"],
       color: "text-emerald-400",
       bg: "bg-[#060c21]",
       border: "group-hover:border-emerald-500",
@@ -54,7 +63,7 @@ export default function TechStack() {
     {
       title: "Tools",
       icon: Wrench,
-      skills: ["Git", "Postman", "Turborepo", "Claude"],
+      skills: ["Git", "Postman", "Turborepo", "Claude", "Cursor"],
       color: "text-pink-400",
       bg: "bg-[#060c21]",
       border: "group-hover:border-pink-500",
@@ -85,7 +94,7 @@ export default function TechStack() {
             style={{ textShadow: "0 0 20px rgba(255,255,255,0.1)" }}
           >
             <ScrambleText text="Tech" duration={800} delay={400} />{" "}
-            <span className="text-blue-500">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-cyan-400">
               <ScrambleText text="Stack." duration={1400} delay={600} />
             </span>
           </h2>
@@ -102,23 +111,28 @@ export default function TechStack() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className={`relative bg-[#060c21] p-8 transition-all duration-300 group border border-slate-800 ${category.border} overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.5)]`}
+              className={`relative bg-[#060c21] p-8 transition-all duration-300 group border border-slate-800 ${category.border} overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.5)]`}
             >
               {/* Corner Accents */}
-              <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-slate-600 opacity-50 z-20 pointer-events-none group-hover:border-white transition-colors"></div>
-              <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-slate-600 opacity-50 z-20 pointer-events-none group-hover:border-white transition-colors"></div>
+              <div
+                className={`absolute top-0 right-0 w-4 h-4 border-t border-r border-slate-600 opacity-30 z-20 pointer-events-none group-hover:opacity-100 group-hover:border-t-2 group-hover:border-r-2 ${category.border} transition-all duration-300`}
+              ></div>
+              <div
+                className={`absolute bottom-0 left-0 w-4 h-4 border-b border-l border-slate-600 opacity-30 z-20 pointer-events-none group-hover:opacity-100 group-hover:border-b-2 group-hover:border-l-2 ${category.border} transition-all duration-300`}
+              ></div>
 
-              {/* Holographic Scanline Overlay */}
-              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.1)_50%)] bg-size-[100%_4px] pointer-events-none z-10 opacity-50 group-hover:opacity-100 transition-opacity"></div>
+              {/* Subtle background gradient based on Execution History cards */}
+              <div className="absolute inset-0 bg-linear-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+              {/* Scanline effect */}
+              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.1)_50%)] bg-size-[100%_4px] pointer-events-none opacity-30"></div>
 
               <div className="relative z-20 flex items-center gap-4 mb-8">
                 <div
-                  className={`w-14 h-14 border border-slate-700 ${category.bg} shadow-[0_0_15px_rgba(0,0,0,0.5)] flex items-center justify-center relative`}
+                  className={`w-14 h-14 border border-slate-700 ${category.bg} flex items-center justify-center relative ${category.color}`}
                 >
-                  <div
-                    className={`absolute top-0 left-0 w-full h-[1px] bg-linear-to-r from-transparent via-${category.color.replace("text-", "")} to-transparent opacity-0 group-hover:opacity-100 transition-opacity`}
-                  ></div>
-                  <category.icon className={category.color} size={24} />
+                  <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-current to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                  <category.icon size={24} />
                 </div>
                 <h3 className="text-xl font-black text-white tracking-widest uppercase">
                   {category.title}

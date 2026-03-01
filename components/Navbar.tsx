@@ -107,7 +107,7 @@ export default function Navbar() {
             ))}
             <a
               href="#contact"
-              className="mt-4 px-6 py-3 bg-blue-600/20 text-blue-400 border border-blue-500 text-center text-xs font-mono tracking-widest uppercase transition-colors"
+              className="mt-4 px-6 py-3 bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 border border-blue-500/30 hover:border-blue-500 text-center text-xs font-mono tracking-widest uppercase transition-all shadow-[0_0_15px_rgba(59,130,246,0.1)] hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
               onClick={() => setIsMobileMenuOpen(false)}
             >
               INITIALIZE_INC()
