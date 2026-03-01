@@ -8,7 +8,7 @@ const AudioContext = createContext({
   playHoverSound: () => {},
   playTypeSound: () => {},
   toggleMute: () => {},
-  isMuted: true,
+  isMuted: false,
 });
 
 export const useAudio = () => useContext(AudioContext);
@@ -18,7 +18,7 @@ export function AudioSystemProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
   const audioCtxRef = useRef<AudioContext | null>(null);
   const droneOscillatorsRef = useRef<OscillatorNode[]>([]);
   const droneGainRef = useRef<GainNode | null>(null);
@@ -30,13 +30,16 @@ export function AudioSystemProvider({
         audioCtxRef.current = new (
           window.AudioContext || (window as any).webkitAudioContext
         )();
+      }
 
-        // Only start drone if not muted
-        if (!isMuted) {
-          startDrone();
-        }
-      } else if (audioCtxRef.current.state === "suspended") {
-        audioCtxRef.current.resume();
+      if (audioCtxRef.current.state === "suspended") {
+        audioCtxRef.current.resume().then(() => {
+          if (!isMuted) {
+            startDrone();
+          }
+        });
+      } else if (!isMuted) {
+        startDrone();
       }
 
       window.removeEventListener("click", initAudio);

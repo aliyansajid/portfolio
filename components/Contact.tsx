@@ -184,7 +184,7 @@ export default function Contact() {
                     htmlFor="name"
                     className="text-xs font-mono tracking-widest text-slate-400 uppercase flex items-center gap-2"
                   >
-                    <span className="text-blue-500">{">"}</span> Full Name
+                    <span className="text-blue-500">{">"}</span> Full_Name
                   </label>
                   <input
                     type="text"
@@ -202,7 +202,7 @@ export default function Contact() {
                     htmlFor="email"
                     className="text-xs font-mono tracking-widest text-slate-400 uppercase flex items-center gap-2"
                   >
-                    <span className="text-blue-500">{">"}</span> Email Address
+                    <span className="text-blue-500">{">"}</span> Email_Address
                   </label>
                   <input
                     type="email"

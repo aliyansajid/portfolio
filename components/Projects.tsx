@@ -180,7 +180,7 @@ export default function Projects() {
                       }
                       className="flex items-center gap-2 px-6 py-2 bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 border border-blue-500/30 hover:border-blue-500 text-xs font-mono tracking-widest uppercase transition-all shadow-[0_0_15px_rgba(59,130,246,0.1)] hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
                     >
-                      <ExternalLink size={16} /> INITIALIZE //
+                      <ExternalLink size={16} /> LIVE DEMO //
                     </a>
                   </div>
                 </div>

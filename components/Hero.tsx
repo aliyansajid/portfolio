@@ -73,7 +73,7 @@ export default function Hero() {
             href="#projects"
             className="flex items-center justify-center gap-2 px-8 py-4 bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 border border-blue-500/30 hover:border-blue-500 text-xs font-mono tracking-widest uppercase transition-all shadow-[0_0_15px_rgba(59,130,246,0.1)] hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] group/link"
           >
-            Select works
+            Selected works
             <ArrowRight
               size={18}
               className="group-hover/link:translate-x-1 transition-transform"
@@ -89,7 +89,7 @@ export default function Hero() {
               size={18}
               className="group-hover/btn:-translate-y-1 transition-transform"
             />
-            Resume.pdf
+            Download Resume
           </a>
         </motion.div>
 
