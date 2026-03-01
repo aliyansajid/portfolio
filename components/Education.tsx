@@ -40,7 +40,7 @@ export default function Education() {
               </div>
 
               <h2
-                className="text-4xl md:text-5xl font-black mb-6 text-white uppercase tracking-tighter"
+                className="text-3xl sm:text-4xl md:text-5xl font-black mb-6 text-white uppercase tracking-tighter"
                 style={{ textShadow: "0 0 20px rgba(255,255,255,0.1)" }}
               >
                 <ScrambleText text="Academic" duration={1200} delay={400} />
@@ -54,7 +54,7 @@ export default function Education() {
                   />
                 </span>
               </h2>
-              <p className="text-slate-400 text-lg mb-10 block font-mono leading-relaxed">
+              <p className="text-slate-400 text-lg mb-0 md:mb-10 block font-mono leading-relaxed">
                 {">"} Trace logs of academic records and core computational
                 theory training.
               </p>

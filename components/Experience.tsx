@@ -70,7 +70,7 @@ export default function Experience() {
                   />
                 </span>
               </h2>
-              <p className="text-slate-400 text-lg mb-10 block font-mono leading-relaxed">
+              <p className="text-slate-400 text-lg mb-0 md:mb-10 block font-mono leading-relaxed">
                 {">"} Trace logs of previous deployments and academic
                 calibrations.
               </p>

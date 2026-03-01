@@ -42,7 +42,7 @@ export default function Testimonials() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
           <div className="inline-flex justify-center items-center gap-2 mb-6 px-3 py-1 bg-slate-900 border border-slate-700 text-xs font-mono text-slate-400">
             <Terminal size={12} className="text-purple-500" />
@@ -98,9 +98,9 @@ export default function Testimonials() {
                     <User className="text-purple-400" size={18} />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-slate-100 uppercase tracking-wider">
+                    <h3 className="text-sm font-bold text-slate-100 uppercase tracking-wider">
                       {testimonial.name}
-                    </h4>
+                    </h3>
                     <p className="text-xs font-mono text-purple-400">
                       {testimonial.role}
                     </p>

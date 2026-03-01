@@ -1,10 +1,69 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, Terminal } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  Terminal,
+  Loader2,
+  CheckCircle,
+  AlertCircle,
+} from "lucide-react";
 import { ScrambleText } from "./ui/scramble-text";
 
 export default function Contact() {
+  const [status, setStatus] = useState<
+    "idle" | "loading" | "success" | "error"
+  >("idle");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus("loading");
+
+    const formData = new FormData(e.currentTarget);
+
+    // Add Web3Forms access key
+    const accessKey = "229d2052-70cf-4714-9e32-29677af823c9";
+    if (!accessKey) {
+      console.error("Web3Forms access key not found");
+      setStatus("error");
+      return;
+    }
+
+    formData.append("access_key", accessKey);
+    // Optional: subject customization, from name, etc.
+    formData.append(
+      "subject",
+      `New message from ${formData.get("name")} via Portfolio`,
+    );
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus("success");
+        (e.target as HTMLFormElement).reset();
+
+        // Reset success message after 5 seconds
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        console.error("Error from Web3Forms:", data);
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 5000);
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 5000);
+    }
+  };
+
   return (
     <section
       className="py-24 relative bg-[#020617] border-t border-slate-800"
@@ -117,7 +176,7 @@ export default function Contact() {
 
             <form
               className="flex flex-col gap-6 relative z-20"
-              onSubmit={(e) => e.preventDefault()}
+              onSubmit={handleSubmit}
             >
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2 relative">
@@ -130,6 +189,8 @@ export default function Contact() {
                   <input
                     type="text"
                     id="name"
+                    name="name"
+                    required
                     placeholder="John Doe"
                     className="peer w-full bg-slate-900 border border-slate-700 px-4 py-3 text-white font-mono placeholder:text-slate-600 focus:outline-none focus:border-blue-500 focus:bg-slate-800 transition-colors shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]"
                   />
@@ -146,6 +207,8 @@ export default function Contact() {
                   <input
                     type="email"
                     id="email"
+                    name="email"
+                    required
                     placeholder="m@example.com"
                     className="peer w-full bg-slate-900 border border-slate-700 px-4 py-3 text-white font-mono placeholder:text-slate-600 focus:outline-none focus:border-blue-500 focus:bg-slate-800 transition-colors shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]"
                   />
@@ -163,6 +226,8 @@ export default function Contact() {
                 <input
                   type="text"
                   id="subject"
+                  name="subject"
+                  required
                   placeholder="ENTER SUBJECT..."
                   className="peer w-full bg-slate-900 border border-slate-700 px-4 py-3 text-white font-mono placeholder:text-slate-600 focus:outline-none focus:border-blue-500 focus:bg-slate-800 transition-colors shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]"
                 />
@@ -178,6 +243,8 @@ export default function Contact() {
                 </label>
                 <textarea
                   id="message"
+                  name="message"
+                  required
                   rows={5}
                   placeholder="ENTER MESSAGE..."
                   className="peer w-full bg-slate-900 border border-slate-700 px-4 py-3 text-white font-mono placeholder:text-slate-600 focus:outline-none focus:border-blue-500 focus:bg-slate-800 transition-colors resize-none shadow-[inset_0_0_10px_rgba(0,0,0,0.5)] relative z-10"
@@ -185,12 +252,41 @@ export default function Contact() {
                 <div className="absolute bottom-1.5 left-0 right-0 h-px bg-linear-to-r from-transparent via-blue-500/50 to-transparent scale-x-0 peer-focus:scale-x-100 transition-transform duration-500 z-20"></div>
               </div>
 
-              <div className="flex justify-end pt-4">
+              <div className="flex flex-col sm:flex-row justify-between items-center gap-4 pt-4">
+                <div className="w-full sm:w-auto">
+                  {status === "success" && (
+                    <motion.p
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-emerald-400 text-xs font-mono flex items-center gap-2"
+                    >
+                      <CheckCircle size={14} /> MESSAGE TRANSMITTED SUCCESSFULLY
+                    </motion.p>
+                  )}
+                  {status === "error" && (
+                    <motion.p
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-rose-400 text-xs font-mono flex items-center gap-2"
+                    >
+                      <AlertCircle size={14} /> COMMUNICATION FAILURE. RETRY
+                      LATER.
+                    </motion.p>
+                  )}
+                </div>
                 <button
                   type="submit"
-                  className="flex items-center justify-center gap-2 w-full md:w-auto px-8 py-4 bg-blue-600/10 cursor-pointer hover:bg-blue-600/20 text-blue-400 border border-blue-500/30 hover:border-blue-500 text-xs font-mono tracking-widest uppercase transition-all shadow-[0_0_15px_rgba(59,130,246,0.1)] hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+                  disabled={status === "loading"}
+                  className={`flex items-center justify-center gap-2 w-full sm:w-auto px-8 py-4 bg-blue-600/10 cursor-pointer hover:bg-blue-600/20 text-blue-400 border border-blue-500/30 hover:border-blue-500 text-xs font-mono tracking-widest uppercase transition-all shadow-[0_0_15px_rgba(59,130,246,0.1)] hover:shadow-[0_0_20px_rgba(59,130,246,0.3)] disabled:opacity-50 disabled:cursor-not-allowed`}
                 >
-                  Send message
+                  {status === "loading" ? (
+                    <>
+                      <Loader2 size={16} className="animate-spin" />
+                      TRANSMITTING...
+                    </>
+                  ) : (
+                    "SEND MESSAGE"
+                  )}
                 </button>
               </div>
             </form>

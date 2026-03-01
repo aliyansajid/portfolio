@@ -117,7 +117,7 @@ export default function Projects() {
               style={{
                 top: `calc(15vh + ${index * 40}px)`,
               }}
-              className="sticky z-10 w-full max-w-5xl mx-auto group bg-[#060c21] border border-slate-800 h-[500px] flex flex-col justify-end transition-colors duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden"
+              className="sticky z-10 w-full max-w-5xl mx-auto group bg-[#060c21] border border-slate-800 h-auto min-h-[500px] flex flex-col justify-end transition-colors duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden"
             >
               <div
                 className={`absolute top-0 right-0 w-4 h-4 border-t border-r border-slate-600 opacity-30 z-20 pointer-events-none group-hover:opacity-100 group-hover:border-t-2 group-hover:border-r-2 transition-all duration-300 group-hover:${project.accent}`}
@@ -136,7 +136,7 @@ export default function Projects() {
                 className={`absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-${project.accent.replace("border-", "")} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20`}
               ></div>
 
-              <div className="relative z-30 p-10 md:p-14 bg-linear-to-t from-[#020617] via-[#020617]/90 to-transparent pt-32">
+              <div className="relative z-30 p-8 sm:p-10 md:p-14 bg-linear-to-t from-[#020617] via-[#020617]/90 to-transparent pt-24 md:pt-32">
                 <div className="flex flex-wrap gap-3 mb-6">
                   {project.tags.map((tag, i) => (
                     <span
