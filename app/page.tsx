@@ -5,6 +5,7 @@ import TechStack from "../components/TechStack";
 import Experience from "../components/Experience";
 import Education from "../components/Education";
 import Projects from "../components/Projects";
+import Certifications from "../components/Certifications";
 import Testimonials from "../components/Testimonials";
 import Contact from "../components/Contact";
 import { Terminal } from "lucide-react";
@@ -18,6 +19,7 @@ export default function Home() {
       <TechStack />
       <Experience />
       <Education />
+      <Certifications />
       <Projects />
       <Testimonials />
       <Contact />
