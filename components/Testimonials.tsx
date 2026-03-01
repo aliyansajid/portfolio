@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Terminal, MessageSquare, User, ShieldCheck } from "lucide-react";
-import { ScrambleText } from "./ui/scramble-text";
 
 export default function Testimonials() {
   const testimonials = [
@@ -52,10 +51,9 @@ export default function Testimonials() {
             className="text-4xl md:text-5xl font-black mb-6 text-white uppercase tracking-tighter"
             style={{ textShadow: "0 0 20px rgba(255,255,255,0.1)" }}
           >
-            <ScrambleText text="Client" duration={1000} delay={200} />
-            &nbsp;
+            Client &nbsp;
             <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-500 to-violet-400">
-              <ScrambleText text="Logs." duration={1400} delay={600} />
+              Logs.
             </span>
           </h2>
           <p className="text-slate-400 text-sm md:text-base font-mono max-w-2xl mx-auto uppercase tracking-widest">

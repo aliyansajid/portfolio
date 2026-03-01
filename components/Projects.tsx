@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Terminal } from "lucide-react";
-import { ScrambleText } from "./ui/scramble-text";
 
 export default function Projects() {
   const projects = [
@@ -94,10 +93,9 @@ export default function Projects() {
             className="text-4xl md:text-5xl font-black mb-6 text-white uppercase tracking-tighter"
             style={{ textShadow: "0 0 20px rgba(255,255,255,0.1)" }}
           >
-            <ScrambleText text="Selected" duration={1000} delay={400} />
-            &nbsp;
+            Selected &nbsp;
             <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-cyan-400">
-              <ScrambleText text="Works." duration={1400} delay={600} />
+              Works.
             </span>
           </h2>
           <p className="text-slate-400 text-sm md:text-base font-mono max-w-2xl mx-auto">

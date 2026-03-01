@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Terminal, Cpu, MapPin, CalendarDays } from "lucide-react";
-import { ScrambleText } from "./ui/scramble-text";
 
 export default function Experience() {
   const experiences = [
@@ -59,15 +58,10 @@ export default function Experience() {
                 className="text-4xl md:text-5xl font-black mb-6 text-white uppercase tracking-tighter"
                 style={{ textShadow: "0 0 20px rgba(255,255,255,0.1)" }}
               >
-                <ScrambleText text="Work" duration={1200} delay={400} />
-                &nbsp;
+                Work &nbsp;
                 <br className="hidden lg:block" />
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-cyan-400">
-                  <ScrambleText
-                    text="Experience."
-                    duration={1500}
-                    delay={800}
-                  />
+                  Experience.
                 </span>
               </h2>
               <p className="text-slate-400 text-lg mb-0 md:mb-10 block font-mono leading-relaxed">

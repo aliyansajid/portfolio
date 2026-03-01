@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Terminal, GraduationCap, MapPin, CalendarDays } from "lucide-react";
-import { ScrambleText } from "./ui/scramble-text";
 
 export default function Education() {
   const education = [
@@ -43,15 +42,10 @@ export default function Education() {
                 className="text-3xl sm:text-4xl md:text-5xl font-black mb-6 text-white uppercase tracking-tighter"
                 style={{ textShadow: "0 0 20px rgba(255,255,255,0.1)" }}
               >
-                <ScrambleText text="Academic" duration={1200} delay={400} />
-                &nbsp;
+                Academic &nbsp;
                 <br className="hidden lg:block" />
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-emerald-500 to-teal-400">
-                  <ScrambleText
-                    text="Calibrations."
-                    duration={1500}
-                    delay={800}
-                  />
+                  Calibrations.
                 </span>
               </h2>
               <p className="text-slate-400 text-lg mb-0 md:mb-10 block font-mono leading-relaxed">

@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Coffee, Code, Globe2, Sparkles, Terminal } from "lucide-react";
-import { ScrambleText } from "./ui/scramble-text";
 import Image from "next/image";
 
 export default function About() {
@@ -61,10 +60,9 @@ export default function About() {
             className="text-4xl md:text-5xl font-black mb-6 text-white uppercase tracking-tighter"
             style={{ textShadow: "0 0 20px rgba(255,255,255,0.1)" }}
           >
-            <ScrambleText text="About" duration={1000} delay={200} />
-            &nbsp;
+            About &nbsp;
             <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-cyan-400">
-              <ScrambleText text="Me." duration={1500} delay={600} />
+              Me.
             </span>
           </h2>
         </motion.div>

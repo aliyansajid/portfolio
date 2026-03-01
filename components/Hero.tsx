@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Download, Github, Linkedin, Terminal } from "lucide-react";
-import { ScrambleText } from "./ui/scramble-text";
 
 export default function Hero() {
   return (
@@ -40,11 +39,10 @@ export default function Hero() {
             className="text-5xl sm:text-6xl md:text-8xl font-black tracking-tighter mb-6 text-white uppercase"
             style={{ textShadow: "0 0 40px rgba(255,255,255,0.1)" }}
           >
-            <ScrambleText text="Architecting" duration={1500} delay={300} />
-            &nbsp;
+            Architecting &nbsp;
             <br className="hidden md:block" />
             <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-indigo-400 to-purple-400 drop-shadow-[0_0_20px_rgba(59,130,246,0.5)] leading-tight block mt-2 md:inline md:mt-0">
-              <ScrambleText text="The Future." duration={2000} delay={800} />
+              The Future.
             </span>
           </motion.h1>
         </div>
@@ -55,12 +53,8 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-12 font-mono leading-relaxed"
         >
-          {">"}&nbsp;
-          <ScrambleText
-            text="Next-generation full-stack development. Building scalable, high-performance web systems and intelligent user interfaces."
-            duration={2500}
-            delay={1200}
-          />
+          {">"}&nbsp; Next-generation full-stack development. Building scalable,
+          high-performance web systems and intelligent user interfaces.
         </motion.p>
 
         <motion.div

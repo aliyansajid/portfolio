@@ -10,7 +10,6 @@ import {
   CheckCircle,
   AlertCircle,
 } from "lucide-react";
-import { ScrambleText } from "./ui/scramble-text";
 
 export default function Contact() {
   const [status, setStatus] = useState<
@@ -87,10 +86,9 @@ export default function Contact() {
             className="text-4xl md:text-5xl font-black mb-6 text-white uppercase tracking-tighter"
             style={{ textShadow: "0 0 20px rgba(255,255,255,0.1)" }}
           >
-            <ScrambleText text="Get In" duration={1000} delay={200} />
-            &nbsp;
+            Get In &nbsp;
             <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-cyan-400">
-              <ScrambleText text="Touch." duration={1400} delay={600} />
+              Touch.
             </span>
           </h2>
           <p className="text-slate-400 text-sm md:text-base font-mono max-w-2xl mx-auto uppercase tracking-widest">
@@ -121,7 +119,7 @@ export default function Contact() {
               </div>
               <div className="relative z-10">
                 <h3 className="text-sm font-mono font-bold text-white mb-1 uppercase tracking-widest">
-                  Email_Address
+                  Email
                 </h3>
                 <a
                   href="mailto:aliyansajid127@gmail.com"
@@ -184,7 +182,7 @@ export default function Contact() {
                     htmlFor="name"
                     className="text-xs font-mono tracking-widest text-slate-400 uppercase flex items-center gap-2"
                   >
-                    <span className="text-blue-500">{">"}</span> Full_Name
+                    <span className="text-blue-500">{">"}</span>Name
                   </label>
                   <input
                     type="text"
@@ -202,7 +200,7 @@ export default function Contact() {
                     htmlFor="email"
                     className="text-xs font-mono tracking-widest text-slate-400 uppercase flex items-center gap-2"
                   >
-                    <span className="text-blue-500">{">"}</span> Email_Address
+                    <span className="text-blue-500">{">"}</span>Email
                   </label>
                   <input
                     type="email"
@@ -221,7 +219,7 @@ export default function Contact() {
                   htmlFor="subject"
                   className="text-xs font-mono tracking-widest text-slate-400 uppercase flex items-center gap-2"
                 >
-                  <span className="text-blue-500">{">"}</span> Subject
+                  <span className="text-blue-500">{">"}</span>Subject
                 </label>
                 <input
                   type="text"
@@ -239,7 +237,7 @@ export default function Contact() {
                   htmlFor="message"
                   className="text-xs font-mono tracking-widest text-slate-400 uppercase flex items-center gap-2"
                 >
-                  <span className="text-blue-500">{">"}</span> Message
+                  <span className="text-blue-500">{">"}</span>Message
                 </label>
                 <textarea
                   id="message"
@@ -260,7 +258,7 @@ export default function Contact() {
                       animate={{ opacity: 1, y: 0 }}
                       className="text-emerald-400 text-xs font-mono flex items-center gap-2"
                     >
-                      <CheckCircle size={14} /> MESSAGE TRANSMITTED SUCCESSFULLY
+                      <CheckCircle size={14} /> MESSAGE SENT SUCCESSFULLY
                     </motion.p>
                   )}
                   {status === "error" && (
@@ -282,7 +280,7 @@ export default function Contact() {
                   {status === "loading" ? (
                     <>
                       <Loader2 size={16} className="animate-spin" />
-                      TRANSMITTING...
+                      SENDING...
                     </>
                   ) : (
                     "SEND MESSAGE"
