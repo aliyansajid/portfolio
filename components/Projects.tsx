@@ -76,7 +76,6 @@ export default function Projects() {
       className="py-24 relative bg-[#020617] border-t border-slate-800"
       id="projects"
     >
-      {/* Background Grid */}
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-size-[50px_50px]"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -88,13 +87,15 @@ export default function Projects() {
           className="text-center mb-16"
         >
           <div className="inline-flex justify-center items-center gap-2 mb-6 px-3 py-1 bg-slate-900 border border-slate-700 text-xs font-mono text-slate-400">
-            <Terminal size={12} className="text-blue-500" /> SYSTEM.ARCHIVES
+            <Terminal size={12} className="text-blue-500" />
+            SYSTEM.ARCHIVES
           </div>
           <h2
             className="text-4xl md:text-5xl font-black mb-6 text-white uppercase tracking-tighter"
             style={{ textShadow: "0 0 20px rgba(255,255,255,0.1)" }}
           >
-            <ScrambleText text="Selected" duration={1000} delay={400} />{" "}
+            <ScrambleText text="Selected" duration={1000} delay={400} />
+            &nbsp;
             <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-cyan-400">
               <ScrambleText text="Works." duration={1400} delay={600} />
             </span>
@@ -105,7 +106,7 @@ export default function Projects() {
           </p>
         </motion.div>
 
-        <div className="flex flex-col gap-24 relative pb-[10vh]">
+        <div className="flex flex-col gap-24 relative">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -118,7 +119,6 @@ export default function Projects() {
               }}
               className="sticky z-10 w-full max-w-5xl mx-auto group bg-[#060c21] border border-slate-800 h-[500px] flex flex-col justify-end transition-colors duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)] overflow-hidden"
             >
-              {/* Corner Accents */}
               <div
                 className={`absolute top-0 right-0 w-4 h-4 border-t border-r border-slate-600 opacity-30 z-20 pointer-events-none group-hover:opacity-100 group-hover:border-t-2 group-hover:border-r-2 transition-all duration-300 group-hover:${project.accent}`}
               ></div>
@@ -126,15 +126,12 @@ export default function Projects() {
                 className={`absolute bottom-0 left-0 w-4 h-4 border-b border-l border-slate-600 opacity-30 z-20 pointer-events-none group-hover:opacity-100 group-hover:border-b-2 group-hover:border-l-2 transition-all duration-300 group-hover:${project.accent}`}
               ></div>
 
-              {/* Background gradient map placeholder */}
               <div
                 className={`absolute inset-0 bg-linear-to-br ${project.color} opacity-20 group-hover:opacity-40 transition-opacity duration-700 pointer-events-none`}
               ></div>
 
-              {/* Scanline effect */}
               <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.1)_50%)] bg-size-[100%_4px] pointer-events-none opacity-30"></div>
 
-              {/* Dynamic glowing border effect at the top */}
               <div
                 className={`absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-${project.accent.replace("border-", "")} to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20`}
               ></div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, Send, Terminal } from "lucide-react";
+import { Mail, Phone, Terminal } from "lucide-react";
 import { ScrambleText } from "./ui/scramble-text";
 
 export default function Contact() {
@@ -10,7 +10,6 @@ export default function Contact() {
       className="py-24 relative bg-[#020617] border-t border-slate-800"
       id="contact"
     >
-      {/* Background Grid */}
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-size-[50px_50px]"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -22,14 +21,15 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <div className="inline-flex justify-center items-center gap-2 mb-6 px-3 py-1 bg-slate-900 border border-slate-700 text-xs font-mono text-slate-400">
-            <Terminal size={12} className="text-blue-500" />{" "}
+            <Terminal size={12} className="text-blue-500" />
             SYSTEM.COMMUNICATION
           </div>
           <h2
             className="text-4xl md:text-5xl font-black mb-6 text-white uppercase tracking-tighter"
             style={{ textShadow: "0 0 20px rgba(255,255,255,0.1)" }}
           >
-            <ScrambleText text="Get In" duration={1000} delay={200} />{" "}
+            <ScrambleText text="Get In" duration={1000} delay={200} />
+            &nbsp;
             <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-cyan-400">
               <ScrambleText text="Touch." duration={1400} delay={600} />
             </span>
@@ -40,7 +40,6 @@ export default function Contact() {
         </motion.div>
 
         <div className="flex flex-col lg:flex-row gap-12">
-          {/* Contact Info */}
           <div className="w-full lg:w-1/3 flex flex-col gap-6">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -49,17 +48,13 @@ export default function Contact() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="relative bg-[#060c21] p-6 border border-slate-800 flex items-start gap-4 transition-all duration-300 group cursor-default overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.5)]"
             >
-              {/* Blue accent line */}
               <div className="absolute top-0 left-0 w-2 h-full bg-blue-600/20 group-hover:bg-blue-500 transition-colors duration-300"></div>
 
-              {/* Corner Accents */}
               <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-slate-600 opacity-30 z-20 pointer-events-none group-hover:border-blue-500 group-hover:border-t-2 group-hover:border-r-2 group-hover:opacity-100 transition-all duration-300"></div>
               <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-slate-600 opacity-30 z-20 pointer-events-none group-hover:border-blue-500 group-hover:border-b-2 group-hover:border-l-2 group-hover:opacity-100 transition-all duration-300"></div>
 
-              {/* Subtle gradient background on hover */}
               <div className="absolute inset-0 bg-linear-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
-              {/* Scanline effect */}
               <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.1)_50%)] bg-size-[100%_4px] pointer-events-none opacity-30"></div>
 
               <div className="w-12 h-12 bg-slate-900 border border-slate-700 flex items-center justify-center shrink-0 shadow-[0_0_10px_rgba(59,130,246,0.2)] relative z-10">
@@ -85,17 +80,13 @@ export default function Contact() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="relative bg-[#060c21] p-6 border border-slate-800 flex items-start gap-4 transition-all duration-300 group cursor-default overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.5)]"
             >
-              {/* Purple accent line */}
               <div className="absolute top-0 left-0 w-2 h-full bg-purple-600/20 group-hover:bg-purple-500 transition-colors duration-300"></div>
 
-              {/* Corner Accents */}
               <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-slate-600 opacity-30 z-20 pointer-events-none group-hover:border-purple-500 group-hover:border-t-2 group-hover:border-r-2 group-hover:opacity-100 transition-all duration-300"></div>
               <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-slate-600 opacity-30 z-20 pointer-events-none group-hover:border-purple-500 group-hover:border-b-2 group-hover:border-l-2 group-hover:opacity-100 transition-all duration-300"></div>
 
-              {/* Subtle gradient background on hover */}
               <div className="absolute inset-0 bg-linear-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
-              {/* Scanline effect */}
               <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.1)_50%)] bg-size-[100%_4px] pointer-events-none opacity-30"></div>
 
               <div className="w-12 h-12 bg-slate-900 border border-slate-700 flex items-center justify-center shrink-0 shadow-[0_0_10px_rgba(168,85,247,0.2)] relative z-10">
@@ -103,7 +94,7 @@ export default function Contact() {
               </div>
               <div className="relative z-10">
                 <h3 className="text-sm font-mono font-bold text-white mb-1 uppercase tracking-widest">
-                  Comm_Link
+                  Phone
                 </h3>
                 <a
                   href="tel:+923369815769"
@@ -115,7 +106,6 @@ export default function Contact() {
             </motion.div>
           </div>
 
-          {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -123,7 +113,6 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="w-full lg:w-2/3 bg-[#060c21] p-8 md:p-10 border border-slate-800 relative group overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.5)]"
           >
-            {/* Scanline Overlay */}
             <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.1)_50%)] bg-size-[100%_4px] pointer-events-none z-10 opacity-30"></div>
 
             <form
@@ -136,12 +125,12 @@ export default function Contact() {
                     htmlFor="name"
                     className="text-xs font-mono tracking-widest text-slate-400 uppercase flex items-center gap-2"
                   >
-                    <span className="text-blue-500">{">"}</span> Identity_Marker
+                    <span className="text-blue-500">{">"}</span> Full Name
                   </label>
                   <input
                     type="text"
                     id="name"
-                    placeholder="ENTER NAME..."
+                    placeholder="John Doe"
                     className="peer w-full bg-slate-900 border border-slate-700 px-4 py-3 text-white font-mono placeholder:text-slate-600 focus:outline-none focus:border-blue-500 focus:bg-slate-800 transition-colors shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]"
                   />
                   <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-blue-500/50 to-transparent scale-x-0 peer-focus:scale-x-100 transition-transform duration-500"></div>
@@ -152,12 +141,12 @@ export default function Contact() {
                     htmlFor="email"
                     className="text-xs font-mono tracking-widest text-slate-400 uppercase flex items-center gap-2"
                   >
-                    <span className="text-blue-500">{">"}</span> Return_Address
+                    <span className="text-blue-500">{">"}</span> Email Address
                   </label>
                   <input
                     type="email"
                     id="email"
-                    placeholder="ENTER EMAIL..."
+                    placeholder="m@example.com"
                     className="peer w-full bg-slate-900 border border-slate-700 px-4 py-3 text-white font-mono placeholder:text-slate-600 focus:outline-none focus:border-blue-500 focus:bg-slate-800 transition-colors shadow-[inset_0_0_10px_rgba(0,0,0,0.5)]"
                   />
                   <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-blue-500/50 to-transparent scale-x-0 peer-focus:scale-x-100 transition-transform duration-500"></div>
@@ -169,7 +158,7 @@ export default function Contact() {
                   htmlFor="subject"
                   className="text-xs font-mono tracking-widest text-slate-400 uppercase flex items-center gap-2"
                 >
-                  <span className="text-blue-500">{">"}</span> Transmission_Type
+                  <span className="text-blue-500">{">"}</span> Subject
                 </label>
                 <input
                   type="text"
@@ -185,7 +174,7 @@ export default function Contact() {
                   htmlFor="message"
                   className="text-xs font-mono tracking-widest text-slate-400 uppercase flex items-center gap-2"
                 >
-                  <span className="text-blue-500">{">"}</span> Payload_Data
+                  <span className="text-blue-500">{">"}</span> Message
                 </label>
                 <textarea
                   id="message"
@@ -199,10 +188,9 @@ export default function Contact() {
               <div className="flex justify-end pt-4">
                 <button
                   type="submit"
-                  className="flex items-center justify-center gap-2 w-full md:w-auto px-8 py-4 bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 border border-blue-500/30 hover:border-blue-500 text-xs font-mono tracking-widest uppercase transition-all shadow-[0_0_15px_rgba(59,130,246,0.1)] hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+                  className="flex items-center justify-center gap-2 w-full md:w-auto px-8 py-4 bg-blue-600/10 cursor-pointer hover:bg-blue-600/20 text-blue-400 border border-blue-500/30 hover:border-blue-500 text-xs font-mono tracking-widest uppercase transition-all shadow-[0_0_15px_rgba(59,130,246,0.1)] hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
                 >
-                  TRANSMIT_DATA()
-                  <Send size={16} />
+                  Send message
                 </button>
               </div>
             </form>

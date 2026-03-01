@@ -75,7 +75,6 @@ export default function TechStack() {
       className="py-24 relative bg-[#020617] border-t border-slate-800"
       id="skills"
     >
-      {/* Background Dot Grid */}
       <div className="absolute inset-0 bg-dot-white/[0.05] bg-size-[20px_20px]"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -87,13 +86,15 @@ export default function TechStack() {
           className="text-center mb-16"
         >
           <div className="inline-flex justify-center items-center gap-2 mb-6 px-3 py-1 bg-slate-900 border border-slate-700 text-xs font-mono text-slate-400">
-            <Terminal size={12} className="text-blue-500" /> SYSTEM.RESOURCES
+            <Terminal size={12} className="text-blue-500" />
+            SYSTEM.RESOURCES
           </div>
           <h2
             className="text-4xl md:text-5xl font-black mb-6 text-white uppercase tracking-tighter"
             style={{ textShadow: "0 0 20px rgba(255,255,255,0.1)" }}
           >
-            <ScrambleText text="Tech" duration={800} delay={400} />{" "}
+            <ScrambleText text="Tech" duration={800} delay={400} />
+            &nbsp;
             <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-cyan-400">
               <ScrambleText text="Stack." duration={1400} delay={600} />
             </span>
@@ -113,7 +114,6 @@ export default function TechStack() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className={`relative bg-[#060c21] p-8 transition-all duration-300 group border border-slate-800 ${category.border} overflow-hidden shadow-[0_0_30px_rgba(0,0,0,0.5)]`}
             >
-              {/* Corner Accents */}
               <div
                 className={`absolute top-0 right-0 w-4 h-4 border-t border-r border-slate-600 opacity-30 z-20 pointer-events-none group-hover:opacity-100 group-hover:border-t-2 group-hover:border-r-2 ${category.border} transition-all duration-300`}
               ></div>
@@ -121,10 +121,8 @@ export default function TechStack() {
                 className={`absolute bottom-0 left-0 w-4 h-4 border-b border-l border-slate-600 opacity-30 z-20 pointer-events-none group-hover:opacity-100 group-hover:border-b-2 group-hover:border-l-2 ${category.border} transition-all duration-300`}
               ></div>
 
-              {/* Subtle background gradient based on Execution History cards */}
               <div className="absolute inset-0 bg-linear-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
-              {/* Scanline effect */}
               <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.1)_50%)] bg-size-[100%_4px] pointer-events-none opacity-30"></div>
 
               <div className="relative z-20 flex items-center gap-4 mb-8">

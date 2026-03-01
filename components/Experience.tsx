@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Terminal, Cpu, MapPin, CalendarDays, ArrowRight } from "lucide-react";
+import { Terminal, Cpu, MapPin, CalendarDays } from "lucide-react";
 import { ScrambleText } from "./ui/scramble-text";
 
 export default function Experience() {
@@ -36,15 +36,13 @@ export default function Experience() {
 
   return (
     <section
-      className="py-32 relative border-t border-slate-800 bg-[#020617]"
+      className="py-24 relative border-t border-slate-800 bg-[#020617]"
       id="experience"
     >
-      {/* Background Grid */}
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-size-[50px_50px]"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="flex flex-col lg:flex-row gap-16">
-          {/* Left Column (Sticky Sidebar) */}
           <div className="w-full lg:w-1/3 lg:sticky lg:top-32 h-fit">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -53,7 +51,7 @@ export default function Experience() {
               transition={{ duration: 0.8 }}
             >
               <div className="inline-flex justify-center items-center gap-2 mb-6 px-3 py-1 bg-slate-900 border border-slate-700 text-xs font-mono text-slate-400">
-                <Terminal size={12} className="text-blue-500" />{" "}
+                <Terminal size={12} className="text-blue-500" />
                 SYSTEM.LOG.EXPERIENCE
               </div>
 
@@ -61,10 +59,15 @@ export default function Experience() {
                 className="text-4xl md:text-5xl font-black mb-6 text-white uppercase tracking-tighter"
                 style={{ textShadow: "0 0 20px rgba(255,255,255,0.1)" }}
               >
-                <ScrambleText text="Execution" duration={1200} delay={400} />{" "}
+                <ScrambleText text="Work" duration={1200} delay={400} />
+                &nbsp;
                 <br className="hidden lg:block" />
                 <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-cyan-400">
-                  <ScrambleText text="History." duration={1500} delay={800} />
+                  <ScrambleText
+                    text="Experience."
+                    duration={1500}
+                    delay={800}
+                  />
                 </span>
               </h2>
               <p className="text-slate-400 text-lg mb-10 block font-mono leading-relaxed">
@@ -74,8 +77,7 @@ export default function Experience() {
             </motion.div>
           </div>
 
-          {/* Right Column (Scrollable Cards) */}
-          <div className="w-full lg:w-2/3 flex flex-col gap-24 relative pb-[10vh]">
+          <div className="w-full lg:w-2/3 flex flex-col gap-24 relative">
             {experiences.map((exp, index) => (
               <motion.div
                 key={index}
@@ -88,16 +90,12 @@ export default function Experience() {
                 }}
                 className="sticky z-10 group bg-[#060c21] border border-slate-800 p-8 md:p-10 transition-all duration-300 shadow-[0_0_30px_rgba(0,0,0,0.5)]"
               >
-                {/* Cyberpunk accent lines */}
                 <div className="absolute top-0 left-0 w-2 h-full bg-blue-600/20 group-hover:bg-blue-500 transition-colors duration-300"></div>
-                {/* Corner Accents */}
                 <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-slate-600 opacity-30 z-20 pointer-events-none group-hover:border-blue-500 group-hover:border-t-2 group-hover:border-r-2 group-hover:opacity-100 transition-all duration-300"></div>
                 <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-slate-600 opacity-30 z-20 pointer-events-none group-hover:border-blue-500 group-hover:border-b-2 group-hover:border-l-2 group-hover:opacity-100 transition-all duration-300"></div>
 
-                {/* Subtle gradient background on hover */}
                 <div className="absolute inset-0 bg-linear-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
-                {/* Scanline effect */}
                 <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.1)_50%)] bg-size-[100%_4px] pointer-events-none opacity-30"></div>
 
                 <div className="relative z-10 flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8 pl-4">
@@ -121,11 +119,11 @@ export default function Experience() {
 
                   <div className="flex flex-col gap-2 md:items-end text-xs font-mono text-slate-500 ml-12 md:ml-0 border-l px-4 md:border-l-0 border-slate-800 md:pl-0">
                     <span className="flex items-center gap-2">
-                      <CalendarDays size={14} className="text-slate-400" />{" "}
+                      <CalendarDays size={14} className="text-slate-400" />
                       {exp.date}
                     </span>
                     <span className="flex items-center gap-2">
-                      <MapPin size={14} className="text-slate-400" />{" "}
+                      <MapPin size={14} className="text-slate-400" />
                       {exp.location}
                     </span>
                   </div>

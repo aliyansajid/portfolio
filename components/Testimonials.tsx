@@ -31,10 +31,9 @@ export default function Testimonials() {
 
   return (
     <section
-      className="py-32 relative bg-[#020617] border-t border-slate-800"
+      className="py-24 relative bg-[#020617] border-t border-slate-800"
       id="testimonials"
     >
-      {/* Background Grid */}
       <div className="absolute inset-0 bg-grid-white/[0.02] bg-size-[50px_50px]"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -46,14 +45,15 @@ export default function Testimonials() {
           className="text-center mb-20"
         >
           <div className="inline-flex justify-center items-center gap-2 mb-6 px-3 py-1 bg-slate-900 border border-slate-700 text-xs font-mono text-slate-400">
-            <Terminal size={12} className="text-purple-500" />{" "}
+            <Terminal size={12} className="text-purple-500" />
             SYSTEM.ENDORSEMENTS
           </div>
           <h2
             className="text-4xl md:text-5xl font-black mb-6 text-white uppercase tracking-tighter"
             style={{ textShadow: "0 0 20px rgba(255,255,255,0.1)" }}
           >
-            <ScrambleText text="Client" duration={1000} delay={200} />{" "}
+            <ScrambleText text="Client" duration={1000} delay={200} />
+            &nbsp;
             <span className="text-transparent bg-clip-text bg-linear-to-r from-purple-500 to-violet-400">
               <ScrambleText text="Logs." duration={1400} delay={600} />
             </span>
@@ -74,19 +74,14 @@ export default function Testimonials() {
               transition={{ duration: 0.5, delay: index * 0.2 }}
               className="relative group bg-[#060c21] p-8 border border-slate-800 transition-all duration-300 flex flex-col justify-between shadow-[0_0_30px_rgba(0,0,0,0.5)]"
             >
-              {/* Cyberpunk Accent Lines */}
               <div className="absolute top-0 left-0 w-2 h-full bg-purple-600/20 group-hover:bg-purple-500 transition-colors duration-300"></div>
-              {/* Corner Accents */}
               <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-slate-600 opacity-30 z-20 pointer-events-none group-hover:border-purple-500 group-hover:border-t-2 group-hover:border-r-2 group-hover:opacity-100 transition-all duration-300"></div>
               <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-slate-600 opacity-30 z-20 pointer-events-none group-hover:border-purple-500 group-hover:border-b-2 group-hover:border-l-2 group-hover:opacity-100 transition-all duration-300"></div>
 
-              {/* Subtle gradient background on hover */}
               <div className="absolute inset-0 bg-linear-to-br from-purple-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
-              {/* Scanline Overlay */}
               <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.1)_50%)] bg-size-[100%_4px] pointer-events-none opacity-30"></div>
 
-              {/* Content */}
               <div className="relative z-10 mb-8">
                 <MessageSquare
                   className="text-purple-500/50 mb-6 drop-shadow-[0_0_8px_rgba(168,85,247,0.5)]"
@@ -97,7 +92,6 @@ export default function Testimonials() {
                 </p>
               </div>
 
-              {/* User Info */}
               <div className="relative z-10 pt-6 border-t border-slate-800/80 flex items-center justify-between">
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 bg-slate-900 border border-slate-700 flex items-center justify-center shadow-[0_0_10px_rgba(168,85,247,0.1)]">
@@ -114,7 +108,6 @@ export default function Testimonials() {
                 </div>
               </div>
 
-              {/* Clearance Badge */}
               <div className="absolute top-6 right-6 z-10 flex items-center gap-1.5 px-2 py-1 bg-purple-500/10 border border-purple-500/30">
                 <ShieldCheck size={12} className="text-purple-400" />
                 <span className="text-[10px] font-mono tracking-widest text-purple-400 uppercase">

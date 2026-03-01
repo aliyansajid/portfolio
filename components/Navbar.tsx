@@ -37,12 +37,10 @@ export default function Navbar() {
           : "top-8 bg-transparent border border-transparent py-4"
       }`}
     >
-      {/* Cyberpunk Accents when scrolled */}
       {isScrolled && (
         <>
           <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-blue-500 opacity-80"></div>
           <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-blue-500 opacity-80"></div>
-          {/* Scanline overlay */}
           <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.1)_50%)] bg-size-[100%_4px] pointer-events-none opacity-30"></div>
         </>
       )}
@@ -58,7 +56,6 @@ export default function Navbar() {
           </span>
         </a>
 
-        {/* Desktop Nav */}
         <div className="hidden md:flex items-center space-x-8">
           {navLinks.map((link) => (
             <a
@@ -71,13 +68,12 @@ export default function Navbar() {
           ))}
           <a
             href="#contact"
-            className="px-6 py-2 bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 border border-blue-500/30 hover:border-blue-500 text-xs font-mono tracking-widest uppercase transition-all shadow-[0_0_15px_rgba(59,130,246,0.1)] hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+            className="px-6 py-2 bg-blue-600/10 uppercase hover:bg-blue-600/20 text-blue-400 border border-blue-500/30 hover:border-blue-500 text-xs font-mono tracking-widest transition-all shadow-[0_0_15px_rgba(59,130,246,0.1)] hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
           >
-            INITIALIZE_INC()
+            Contact
           </a>
         </div>
 
-        {/* Mobile Nav Toggle */}
         <button
           className="md:hidden text-slate-300 hover:text-blue-400 transition-colors"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -86,7 +82,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <motion.div
           initial={{ opacity: 0, y: -10 }}
@@ -107,10 +102,10 @@ export default function Navbar() {
             ))}
             <a
               href="#contact"
-              className="mt-4 px-6 py-3 bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 border border-blue-500/30 hover:border-blue-500 text-center text-xs font-mono tracking-widest uppercase transition-all shadow-[0_0_15px_rgba(59,130,246,0.1)] hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
+              className="mt-4 px-6 py-3 bg-blue-600/10 uppercase hover:bg-blue-600/20 text-blue-400 border border-blue-500/30 hover:border-blue-500 text-center text-xs font-mono tracking-widest transition-all shadow-[0_0_15px_rgba(59,130,246,0.1)] hover:shadow-[0_0_20px_rgba(59,130,246,0.3)]"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              INITIALIZE_INC()
+              Contact
             </a>
           </div>
         </motion.div>

@@ -3,13 +3,12 @@
 import { motion } from "framer-motion";
 import { Coffee, Code, Globe2, Sparkles, Terminal } from "lucide-react";
 import { ScrambleText } from "./ui/scramble-text";
-
 import Image from "next/image";
 
 export default function About() {
   const stats = [
     {
-      value: "2+",
+      value: "3+",
       label: "Years Experience",
       icon: Coffee,
       color: "text-blue-400",
@@ -44,7 +43,6 @@ export default function About() {
 
   return (
     <section className="py-24 relative bg-[#020617]" id="about">
-      {/* Background Dot Grid */}
       <div className="absolute inset-0 bg-dot-white/[0.05] bg-size-[20px_20px]"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
@@ -56,13 +54,15 @@ export default function About() {
           className="text-center mb-16"
         >
           <div className="inline-flex justify-center items-center gap-2 mb-6 px-3 py-1 bg-slate-900 border border-slate-700 text-xs font-mono text-slate-400">
-            <Terminal size={12} className="text-blue-500" /> SYSTEM.WHOAMI
+            <Terminal size={12} className="text-blue-500" />
+            SYSTEM.WHOAMI
           </div>
           <h2
             className="text-4xl md:text-5xl font-black mb-6 text-white uppercase tracking-tighter"
             style={{ textShadow: "0 0 20px rgba(255,255,255,0.1)" }}
           >
-            <ScrambleText text="Discover" duration={1000} delay={200} />{" "}
+            <ScrambleText text="About" duration={1000} delay={200} />
+            &nbsp;
             <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-cyan-400">
               <ScrambleText text="Me." duration={1500} delay={600} />
             </span>
@@ -70,7 +70,6 @@ export default function About() {
         </motion.div>
 
         <div className="flex flex-col lg:flex-row gap-16 items-center">
-          {/* Left Side: Profile Aesthetic */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -78,19 +77,14 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="w-full lg:w-5/12 relative flex justify-center"
           >
-            {/* Cyberpunk profile card */}
             <div className="relative w-full max-w-sm aspect-4/5 bg-[#060c21] border border-slate-800 flex flex-col items-center justify-center p-8 group transition-all duration-500 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-              {/* Cyberpunk accent lines */}
               <div className="absolute top-0 left-0 w-2 h-1/2 bg-blue-600/20 group-hover:bg-blue-500 transition-colors duration-300"></div>
 
-              {/* Corner Accents */}
               <div className="absolute top-0 right-0 w-4 h-4 border-t border-r border-slate-600 opacity-30 z-20 pointer-events-none group-hover:border-blue-500 group-hover:border-t-2 group-hover:border-r-2 group-hover:opacity-100 transition-all duration-300"></div>
               <div className="absolute bottom-0 left-0 w-4 h-4 border-b border-l border-slate-600 opacity-30 z-20 pointer-events-none group-hover:border-blue-500 group-hover:border-b-2 group-hover:border-l-2 group-hover:opacity-100 transition-all duration-300"></div>
 
-              {/* Subtle gradient background on hover */}
               <div className="absolute inset-0 bg-linear-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
-              {/* Futuristic Cyberpunk Image Container */}
               <div
                 className="w-40 h-44 relative z-10 mb-6 overflow-hidden"
                 style={{
@@ -98,7 +92,6 @@ export default function About() {
                     "polygon(20% 0%, 100% 0, 100% 80%, 80% 100%, 0 100%, 0% 20%)",
                 }}
               >
-                {/* Image Wrapper inside the clipped area */}
                 <div className="absolute inset-0 transition-colors duration-500">
                   <div
                     className="w-full h-full relative overflow-hidden bg-transparent"
@@ -107,7 +100,6 @@ export default function About() {
                         "polygon(20% 0%, 100% 0, 100% 80%, 80% 100%, 0 100%, 0% 20%)",
                     }}
                   >
-                    {/* User Profile Image */}
                     <Image
                       src="/Picture.png"
                       alt="Allyan Sajid Profile"
@@ -115,7 +107,6 @@ export default function About() {
                       height={176}
                       className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-700 opacity-70 group-hover:opacity-100 group-hover:scale-105"
                     />
-                    {/* Cyberpunk Overlay Scanline */}
                     <div className="absolute inset-0 bg-blue-500/10 mix-blend-overlay group-hover:opacity-0 transition-opacity duration-500"></div>
                   </div>
                 </div>
@@ -139,12 +130,10 @@ export default function About() {
                 </div>
               </div>
 
-              {/* Scanline effect */}
               <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.1)_50%)] bg-size-[100%_4px] pointer-events-none opacity-30"></div>
             </div>
           </motion.div>
 
-          {/* Right Side: Text & Stats */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -156,7 +145,7 @@ export default function About() {
               className="text-2xl md:text-3xl font-black uppercase tracking-tight text-white mb-6"
               style={{ textShadow: "0 0 15px rgba(255,255,255,0.1)" }}
             >
-              INITIATING{" "}
+              INITIATING&nbsp;
               <span className="text-transparent bg-clip-text bg-linear-to-r from-blue-500 to-cyan-400">
                 DIGITAL SOLUTIONS
               </span>
@@ -166,7 +155,7 @@ export default function About() {
               <p>
                 {">"} Hello! I'm Allyan Sajid, a passionate full-stack developer
                 who loves building digital solutions that make an impact. My
-                journey in web development started back in 2018, and since then,
+                journey in web development started back in 2022, and since then,
                 I've had the privilege of working on diverse projects ranging
                 from simple landing pages to complex enterprise applications.
               </p>
@@ -179,7 +168,6 @@ export default function About() {
               </p>
             </div>
 
-            {/* Quick Stats Grid */}
             <div className="grid grid-cols-2 gap-4 sm:gap-6">
               {stats.map((stat, idx) => (
                 <div
@@ -188,10 +176,8 @@ export default function About() {
                 >
                   <div className="absolute inset-0 bg-linear-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
 
-                  {/* Scanline effect */}
                   <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.1)_50%)] bg-size-[100%_4px] pointer-events-none opacity-30"></div>
 
-                  {/* Corner Accents */}
                   <div
                     className={`absolute top-0 right-0 w-4 h-4 border-t border-r border-slate-600 opacity-30 z-20 pointer-events-none group-hover:opacity-100 group-hover:border-t-2 group-hover:border-r-2 transition-all duration-300 ${stat.border}`}
                   ></div>
